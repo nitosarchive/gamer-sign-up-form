@@ -4,7 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
     <title>Sign Up</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <img src="./assets/images/logo.svg" alt="logo-neoncore" />
+      <div class="checklist incomplete">
+        <span id="currentCheck">0</span><span>/5 ready</span>
+      </div>
+    </header>
+    <section>
+      <h1>
+        <span class="backslash">//</span>
+        join the nexus
+      </h1>
+
+      <span class="init">initialize your neoncore identity</span>
+      <div class="divider"></div>
+      <div class="bottom-section">
+        <span>operator id</span> <span>unassigned</span>
+      </div>
+    </section>
+    <form action="" method="get" id="signForm">
+      <div class="top-wrapper">
+        <div><span>New operator</span><span> all required</span></div>
+      </div>
+      <div class="divider"></div>
+
+      <div class="form-container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <div class="terms-wrapper">
+        <input
+          type="checkbox"
+          id="termsCheck"
+          name="checkbox"
+          value="terms and services"
+        />
+        <label for="termsCheck">
+          I accept the <span>terms</span> and
+          <span>privacy policy</span>.</label
+        >
+      </div>
+
+      <button>Initialize account</button>
+
+      <span>Already an operator?</span>
+      <span>Log in</span>
+    </form>
+  </body>
 </html>

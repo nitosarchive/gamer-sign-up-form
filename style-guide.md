@@ -13,33 +13,33 @@ The designs were created to the following widths:
 
 ### Neutral
 
-- Neutral 950: hsl(214 37% 4%)
-- Neutral 900: hsl(210 39% 7%)
-- Neutral 800: hsl(211 30% 13%)
-- Neutral 700: hsl(211 22% 24%)
-- Neutral 600: hsl(210 18% 42%)
-- Neutral 500: hsl(211 14% 50%)
-- Neutral 400: hsl(211 13% 55%)
-- Neutral 300: hsl(211 18% 68%)
-- Neutral 100: hsl(208 49% 92%)
-- Neutral 50: hsl(204 60% 97%)
+- Neutral 950: rgb(6, 10, 14)
+- Neutral 900: rgb(11, 18, 25)
+- Neutral 800: rgb(23, 33, 43)
+- Neutral 700: rgb(48, 61, 75)
+- Neutral 600: rgb(88, 107, 126)
+- Neutral 500: rgb(110, 127, 145)
+- Neutral 400: rgb(125, 140, 155)
+- Neutral 300: rgb(159, 173, 188)
+- Neutral 100: rgb(225, 235, 245)
+- Neutral 50: rgb(243, 248, 252)
 
 ### Lime
 
-- Lime 500: hsl(77 90% 59%)
-- Lime 700: hsl(77 67% 39%)
+- Lime 500: rgb(191, 245, 56)
+- Lime 700: rgb(128, 166, 33)
 
 ### Red
 
-- Red 400: hsl(4 100% 74%)
+- Red 400: rgb(255, 131, 122)
 
 ### Amber
 
-- Amber 400: hsl(40 100% 65%)
+- Amber 400: rgb(255, 195, 77)
 
 ### Navy
 
-- Navy 950: hsl(214 60% 2%)
+- Navy 950: rgb(2, 5, 8)
 
 ### Transparent
 
