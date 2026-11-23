@@ -146,17 +146,35 @@ form {
   flex-direction: column;
   padding-block: var(--form-padding-block);
   padding-inline: var(--form-padding-inline);
+  border: 1px solid var(--Neutral-700);
+  position: relative;
 }
 
+.edge-top {
+  width: 30px;
+  height: 30px;
+  background: var(--Lime-500);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  z-index: -1;
+}
+
+.edge-bottom {
+  width: 30px;
+  height: 30px;
+  background: var(--Lime-500);
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  z-index: -1;
+}
 /*Form Interior */
 
 .top-wrapper {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-}
-
-.top-wrapper {
-  display: block;
 }
 
 button {
