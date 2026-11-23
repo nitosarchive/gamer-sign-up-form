@@ -151,30 +151,33 @@ form {
 }
 
 .edge-top {
-  width: 30px;
-  height: 30px;
-  background: var(--Lime-500);
+  width: 25px;
+  height: 25px;
   position: absolute;
-  top: -2px;
-  left: -2px;
-  z-index: -1;
+  top: 0px;
+  left: 0px;
+  border-left: 2px solid var(--Lime-500);
+  border-top: 2px solid var(--Lime-500);
 }
 
 .edge-bottom {
-  width: 30px;
-  height: 30px;
-  background: var(--Lime-500);
+  width: 25px;
+  height: 25px;
+
   position: absolute;
-  bottom: -2px;
-  right: -2px;
-  z-index: -1;
+  bottom: 0px;
+  right: 0px;
+  border-right: 2px solid var(--Lime-500);
+  border-bottom: 2px solid var(--Lime-500);
 }
+
 /*Form Interior */
 
 .top-wrapper {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  text-transform: uppercase;
 }
 
 button {
