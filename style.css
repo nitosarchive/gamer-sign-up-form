@@ -89,7 +89,7 @@ body {
 
 .divider {
   width: 100%;
-  height: 1.2px;
+  height: 1px;
   background: var(--Neutral-700);
 }
 
@@ -198,9 +198,11 @@ form .divider {
   margin-block-end: var(--default-spacing);
   display: flex;
   flex-direction: column;
+
   span:nth-child(2) {
     color: var(--Neutral-300);
   }
+
   * {
     margin-block-end: 0.4em;
   }
@@ -210,19 +212,54 @@ form .divider {
   text-transform: uppercase;
 }
 
+.form-container > div > span {
+  color: var(--Neutral-500);
+  text-transform: lowercase;
+  font-size: 0.69em;
+}
+
+.form-container span::first-letter {
+  text-transform: uppercase;
+}
+
 .arrow {
   color: var(--Lime-500);
 }
 
 input {
-  width: 100%;
-  height: 50px;
   background: var(--Neutral-950);
   border: 1px solid var(--Neutral-600);
+  padding-inline: 1em;
+  padding-block: 0.8em;
+  font-size: 1rem;
+  color: var(--Neutral-50);
+  font-family: var(--jetbrains);
 }
+
 input:focus {
-  border: none;
+  border: 1px solid var(--Lime-700);
+  outline: 1px solid var(--Lime-500);
+  outline-offset: 2px;
 }
-button {
+
+input::-webkit-input-placeholder {
+  color: var(--Neutral-500);
+}
+
+#strength {
+  display: flex;
+}
+
+#strength span {
+  height: 5px;
+
+  width: 100%;
+  background: var(--Neutral-700);
+}
+
+#strength span:not(:last-child) {
+  margin-inline-end: 0.25em;
+}
+#strength span:not(:last-child) button {
   font: inherit;
 }
