@@ -86,8 +86,6 @@ body {
   padding-inline: var(--body-padding-inline);
   line-height: 1.5;
   padding-block: var(--body-padding-block);
-  align-items: center;
-  min-height: 100%;
 }
 
 .divider {
@@ -157,9 +155,9 @@ form {
   position: relative;
   max-width: 600px;
 
-  /* > * {
+  > * {
     margin-block-end: 1em;
-  } */
+  }
 }
 
 .edge-top {
@@ -170,15 +168,16 @@ form {
   left: 0px;
   border-left: 2px solid var(--Lime-500);
   border-top: 2px solid var(--Lime-500);
+  margin: 0;
 }
 
 .edge-bottom {
   width: 25px;
   height: 25px;
-
+  margin: 0;
   position: absolute;
-  bottom: 0px;
-  right: 0px;
+  bottom: 0;
+  right: 0;
   border-right: 2px solid var(--Lime-500);
   border-bottom: 2px solid var(--Lime-500);
 }
