@@ -86,6 +86,8 @@ body {
   padding-inline: var(--body-padding-inline);
   line-height: 1.5;
   padding-block: var(--body-padding-block);
+  align-items: center;
+  min-height: 100%;
 }
 
 .divider {
@@ -153,6 +155,11 @@ form {
   padding-inline: var(--form-padding-inline);
   border: 1px solid var(--Neutral-700);
   position: relative;
+  max-width: 600px;
+
+  /* > * {
+    margin-block-end: 1em;
+  } */
 }
 
 .edge-top {
@@ -187,7 +194,6 @@ form {
   span:nth-child(2) {
     color: var(--Neutral-500);
   }
-  margin-block-end: 0.8em;
 }
 
 form .divider {
@@ -278,18 +284,17 @@ label {
   color: var(--Neutral-500);
 }
 
-label a {
+a {
   text-transform: capitalize;
   text-decoration-color: var(--Neutral-600);
   cursor: pointer;
   color: var(--Lime-500);
 }
 
-label a:focus {
+a:focus {
   border: 1px solid var(--Lime-700);
   outline: 1px solid var(--Lime-500);
 }
-
 input[type="checkbox"] {
   background: var(--Neutral-950);
   border: 1px solid var(--Neutral-600);
@@ -311,4 +316,27 @@ input[type="checkbox"]::after {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -40%);
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  background: var(--Lime-500);
+  border: none;
+  padding-block: 0.6em;
+}
+
+button:focus {
+  border: 1px solid var(--Lime-700);
+  outline: 1px solid var(--Lime-500);
+}
+
+.login-section {
+  display: flex;
+  justify-content: center;
+  color: var(--Neutral-400);
+  gap: 0.4em;
 }
