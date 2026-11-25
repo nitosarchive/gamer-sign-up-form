@@ -23,7 +23,7 @@
       <span class="init">initialize your neoncore identity</span>
       <div class="divider"></div>
       <div class="bottom-section">
-        <span>operator id</span><span>unassigned</span>
+        <span>operator id</span><span id="name">unassigned</span>
       </div>
     </section>
     <form action="" method="get" id="signForm">
@@ -40,8 +40,10 @@
             <span class="arrow">></span>
             <span>callsign</span>
           </div>
-          <input type="text" placeholder="e.g. Vortext_07" />
-          <span>3-20 characters: letters, numbers, _ or -</span>
+          <input id="userInput" type="text" placeholder="e.g. Vortext_07" />
+          <span id="user-validity"
+            >3-20 characters: letters, numbers, _ or -</span
+          >
         </div>
         <div>
           <div class="form-title">

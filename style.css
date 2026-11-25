@@ -115,10 +115,6 @@ header {
   margin-block-end: var(--main-elm-margin);
 }
 
-.checklist.incomplete {
-  color: var(--Neutral-500);
-}
-
 /* Section*/
 
 section > * {
@@ -285,15 +281,17 @@ label {
 
 a {
   text-transform: capitalize;
-  text-decoration-color: var(--Neutral-600);
+
   cursor: pointer;
   color: var(--Lime-500);
+  text-decoration: 1px underline dotted var(--Lime-700);
 }
 
 a:focus {
   border: 1px solid var(--Lime-700);
   outline: 1px solid var(--Lime-500);
 }
+
 input[type="checkbox"] {
   background: var(--Neutral-950);
   border: 1px solid var(--Neutral-600);
@@ -326,6 +324,9 @@ button {
   background: var(--Lime-500);
   border: none;
   padding-block: 0.6em;
+  transition:
+    box-shadow,
+    0.2s linear;
 }
 
 button:focus {
@@ -338,4 +339,66 @@ button:focus {
   justify-content: center;
   color: var(--Neutral-400);
   gap: 0.4em;
+}
+
+a:hover {
+  color: var(--Neutral-50);
+  text-decoration: 1px underline dotted var(--Neutral-50);
+}
+
+button:hover {
+  box-shadow: 3px 3px var(--lime-alpha);
+  transition: all, 1s, linear;
+  background: var(--Neutral-50);
+}
+
+input:hover {
+  border-color: var(--Neutral-50);
+}
+
+/*States*/
+.checklist.complete {
+  color: var(--Lime-700);
+
+  animation: complete-shake 1s linear;
+}
+
+@keyframes complete-shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+.checklist.incomplete {
+  color: var(--Neutral-500);
 }
