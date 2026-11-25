@@ -80,10 +80,11 @@
 body {
   background-color: var(--Neutral-950);
   color: var(--Neutral-50);
-  font-family: var(--jetbrains);
+  font-family: var(--jetbrains), Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
   padding-inline: var(--body-padding-inline);
+  line-height: 1.5;
   padding-block: var(--body-padding-block);
 }
 
@@ -226,7 +227,7 @@ form .divider {
   color: var(--Lime-500);
 }
 
-input {
+input[type="text"] {
   background: var(--Neutral-950);
   border: 1px solid var(--Neutral-600);
   padding-inline: 1em;
@@ -262,4 +263,52 @@ input::-webkit-input-placeholder {
 }
 #strength span:not(:last-child) button {
   font: inherit;
+}
+
+/*Terms section */
+
+.terms-wrapper {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+}
+
+label {
+  margin-inline-start: 1em;
+  color: var(--Neutral-500);
+}
+
+label a {
+  text-transform: capitalize;
+  text-decoration-color: var(--Neutral-600);
+  cursor: pointer;
+  color: var(--Lime-500);
+}
+
+label a:focus {
+  border: 1px solid var(--Lime-700);
+  outline: 1px solid var(--Lime-500);
+}
+
+input[type="checkbox"] {
+  background: var(--Neutral-950);
+  border: 1px solid var(--Neutral-600);
+
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+  padding: 1em;
+}
+
+input[type="checkbox"]:checked {
+  background: var(--Lime-500);
+  border: none;
+}
+
+input[type="checkbox"]::after {
+  content: url("./assets/images/icon-tick-16.svg");
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
 }
