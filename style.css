@@ -364,9 +364,9 @@ input:hover {
   gap: 1em;
 }
 
-/* .hidden {
+.hidden {
   display: none;
-} */
+}
 
 .checklist.complete {
   color: var(--Lime-700);
