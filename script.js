@@ -21,6 +21,30 @@ const passInput = document.getElementById("passInput");
 const retypeInput = document.getElementById("retypeInput");
 const checkbox = document.getElementById("checkbox");
 
+function concealment(x) {
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
+document.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  if (e.target.classList.contains("concealed")) {
+    const elm = e.target.previousSibling.previousSibling;
+    e.target.classList.remove("concealed");
+    e.target.classList.add("unconcealed");
+    concealment(elm);
+  } else if (e.target.classList.contains("unconcealed")) {
+    const elm = e.target.previousSibling.previousSibling;
+    e.target.classList.remove("unconcealed");
+    e.target.classList.add("concealed");
+    concealment(elm);
+  } else return;
+});
+
 function completeness() {
   if (checkTally === 5) {
     checklist.classList.remove("incomplete");

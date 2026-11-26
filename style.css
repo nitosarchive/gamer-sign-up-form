@@ -193,6 +193,9 @@ form {
   transform: translate(0, -50%);
   right: 2.5%;
   cursor: pointer;
+  img {
+    pointer-events: none;
+  }
 }
 
 .passContainer button:hover {
@@ -335,7 +338,7 @@ input[type="checkbox"]::after {
   transform: translate(-50%, -40%);
 }
 
-button:not(.visibility) {
+button:not(.concealed, .unconcealed) {
   cursor: pointer;
   font: inherit;
   text-transform: uppercase;
@@ -349,12 +352,12 @@ button:not(.visibility) {
     0.2s linear;
 }
 
-button:not(.visibility):focus {
+button:not(.concealed, .unconcealed):focus {
   border: 1px solid var(--Lime-700);
   outline: 1px solid var(--Lime-500);
 }
 
-button:not(.visibility):hover {
+button:not(.concealed, .unconcealed):hover {
   box-shadow: 3px 3px var(--lime-alpha);
   transition: all, 1s, linear;
   background: var(--Neutral-50);
@@ -434,4 +437,12 @@ input:hover {
 
 .checklist.incomplete {
   color: var(--Neutral-500);
+}
+
+.unconcealed img {
+  content: url("./assets/images/icon-eye-off.svg");
+}
+
+.concealed img {
+  content: url("./assets/images/icon-eye.svg");
 }
