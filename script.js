@@ -5,6 +5,9 @@ const userInput = document.getElementById("userInput");
 let checkTally = 0;
 let userTally = false;
 let emailTally = false;
+let passwordTally = false;
+let retypeTally = false;
+let checkboxTally = false;
 const allInputs = document.querySelectorAll("input");
 const userInvalid = document.getElementById("userInvalid");
 const userDirections = document.getElementById("userDirections");
@@ -14,6 +17,9 @@ const passDirections = document.getElementById("passDirections");
 const retypeInvalid = document.getElementById("retypeInvalid");
 const termsInvalid = document.getElementById("termsInvalid");
 const emailInput = document.getElementById("emailInput");
+const passInput = document.getElementById("passInput");
+const retypeInput = document.getElementById("retypeInput");
+const checkbox = document.getElementById("checkbox");
 
 function completeness() {
   if (checkTally === 5) {
@@ -69,6 +75,24 @@ function emailInputEvent() {
   emailValidation(emailInput.value);
   completeness();
 }
+
+function passwordInputEvent() {
+  if (passInput.value.length >= 8 && passwordTally === false) {
+    passwordTally = true;
+    checkTally++;
+
+    checkCount.innerText = checkTally;
+  } else if (passwordTally === true && passInput.value.length < 8) {
+    passwordTally = false;
+    checkTally--;
+
+    checkCount.innerText = checkTally;
+  }
+
+  completeness();
+}
+
+passInput.addEventListener("input", passwordInputEvent);
 
 emailInput.addEventListener("input", emailInputEvent);
 

@@ -178,6 +178,27 @@ form {
 
 /*Form Interior */
 
+.passContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.passContainer button {
+  position: absolute;
+  background: none;
+  border: none;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 2.5%;
+  cursor: pointer;
+}
+
+.passContainer button:hover {
+  opacity: 0.8;
+}
+
 .top-wrapper {
   width: 100%;
   display: flex;
@@ -195,7 +216,6 @@ form .divider {
 }
 
 .form-container > div {
-  margin-block-end: var(--default-spacing);
   display: flex;
   flex-direction: column;
 
@@ -207,7 +227,9 @@ form .divider {
     margin-block-end: 0.4em;
   }
 }
-
+.form-container > div:not(:last-of-type) {
+  margin-block-end: var(--default-spacing);
+}
 .form-container span:not(.invalid) {
   text-transform: uppercase;
 }
@@ -226,7 +248,7 @@ form .divider {
   color: var(--Lime-500);
 }
 
-input[type="text"] {
+input:not([type="checkbox"]) {
   background: var(--Neutral-950);
   border: 1px solid var(--Neutral-600);
   padding-inline: 1em;
@@ -313,7 +335,7 @@ input[type="checkbox"]::after {
   transform: translate(-50%, -40%);
 }
 
-button {
+button:not(.visibility) {
   cursor: pointer;
   font: inherit;
   text-transform: uppercase;
@@ -327,9 +349,15 @@ button {
     0.2s linear;
 }
 
-button:focus {
+button:not(.visibility):focus {
   border: 1px solid var(--Lime-700);
   outline: 1px solid var(--Lime-500);
+}
+
+button:not(.visibility):hover {
+  box-shadow: 3px 3px var(--lime-alpha);
+  transition: all, 1s, linear;
+  background: var(--Neutral-50);
 }
 
 .login-section {
@@ -342,12 +370,6 @@ button:focus {
 a:hover {
   color: var(--Neutral-50);
   text-decoration: 1px underline dotted var(--Neutral-50);
-}
-
-button:hover {
-  box-shadow: 3px 3px var(--lime-alpha);
-  transition: all, 1s, linear;
-  background: var(--Neutral-50);
 }
 
 input:hover {

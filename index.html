@@ -57,7 +57,7 @@
             <span class="arrow">></span>
             <span>email</span>
           </div>
-          <input id="emailInput" type="text" placeholder="you@example.com" />
+          <input id="emailInput" type="email" placeholder="you@example.com" />
           <span id="emailInvalid" class="invalid hidden"
             ><img
               src="./assets/images/icon-alert.svg"
@@ -71,7 +71,12 @@
             <span class="arrow">></span>
             <span>password</span>
           </div>
-          <input type="text" />
+          <div class="passContainer">
+            <input id="passInput" type="password" />
+            <button class="visibility">
+              <img src="./assets/images/icon-eye.svg" alt="password visible" />
+            </button>
+          </div>
           <div id="strength">
             <span></span><span></span><span></span><span></span>
           </div>
@@ -89,7 +94,12 @@
             <span class="arrow">></span>
             <span>confirm password</span>
           </div>
-          <input type="text" />
+          <div class="passContainer">
+            <input id="retypeInput" type="passowrd" />
+            <button class="visibility">
+              <img src="./assets/images/icon-eye.svg" alt="password visible" />
+            </button>
+          </div>
           <span id="retypeInvalid" class="invalid hidden"
             ><img
               src="./assets/images/icon-alert.svg"
