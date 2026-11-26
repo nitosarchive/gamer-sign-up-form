@@ -41,8 +41,15 @@
             <span>callsign</span>
           </div>
           <input id="userInput" type="text" placeholder="e.g. Vortext_07" />
-          <span id="user-validity"
+          <span id="userDirections"
             >3-20 characters: letters, numbers, _ or -</span
+          >
+          <span id="userInvalid" class="invalid hidden"
+            ><img
+              src="./assets/images/icon-alert.svg"
+              alt="missing condition"
+            />
+            Use at least 3 characters</span
           >
         </div>
         <div>
@@ -51,6 +58,13 @@
             <span>email</span>
           </div>
           <input type="text" placeholder="you@example.com" />
+          <span id="emailInvalid" class="invalid hidden"
+            ><img
+              src="./assets/images/icon-alert.svg"
+              alt="missing condition"
+            />
+            Enter a valid email, like you@example.com</span
+          >
         </div>
         <div>
           <div class="form-title">
@@ -61,7 +75,14 @@
           <div id="strength">
             <span></span><span></span><span></span><span></span>
           </div>
-          <span>at least 8 characters</span>
+          <span id="passDirections">at least 8 characters</span>
+          <span id="passwordInvalid" class="invalid hidden"
+            ><img
+              src="./assets/images/icon-alert.svg"
+              alt="missing condition"
+            />
+            Use at least 8 characters</span
+          >
         </div>
         <div>
           <div class="form-title">
@@ -69,6 +90,12 @@
             <span>confirm password</span>
           </div>
           <input type="text" />
+          <span id="retypeInvalid" class="invalid hidden"
+            ><img
+              src="./assets/images/icon-alert.svg"
+              alt="missing condition"
+            />Passwords don't match</span
+          >
         </div>
       </div>
 
@@ -83,9 +110,11 @@
           I accept the <a href="#">terms</a> and
           <a href="#">privacy policy</a>.</label
         >
-
-        <a href="#"></a>
       </div>
+      <span id="termsInvalid" class="invalid hidden"
+        ><img src="./assets/images/icon-alert.svg" alt="missing condition" />
+        Accept the terms to continue</span
+      >
 
       <button>Initialize account</button>
       <div class="login-section">

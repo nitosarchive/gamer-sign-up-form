@@ -36,8 +36,6 @@
   --jetbrains: "Jetbrains";
   --orbitron: "Orbitron";
 
-  --error-color: rgb(255, 131, 122) /*Font sizes */ --font-size-1: 1rem;
-
   /*Spacing*/
   --default-spacing: 1em;
   --form-spacing: 0.5em;
@@ -210,11 +208,11 @@ form .divider {
   }
 }
 
-.form-container span {
+.form-container span:not(.invalid) {
   text-transform: uppercase;
 }
 
-.form-container > div > span {
+.form-container > div > span:not(.invalid) {
   color: var(--Neutral-500);
   text-transform: lowercase;
   font-size: 0.69em;
@@ -357,6 +355,19 @@ input:hover {
 }
 
 /*States*/
+
+.invalid {
+  display: flex;
+  align-items: flex-start;
+  font-size: 0.69em;
+  color: var(--Red-400);
+  gap: 1em;
+}
+
+/* .hidden {
+  display: none;
+} */
+
 .checklist.complete {
   color: var(--Lime-700);
 
