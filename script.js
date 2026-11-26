@@ -19,7 +19,7 @@ const termsInvalid = document.getElementById("termsInvalid");
 const emailInput = document.getElementById("emailInput");
 const passInput = document.getElementById("passInput");
 const retypeInput = document.getElementById("retypeInput");
-const checkbox = document.getElementById("checkbox");
+const checkbox = document.getElementById("termsCheck");
 
 function concealment(x) {
   if (x.type === "password") {
@@ -30,7 +30,12 @@ function concealment(x) {
 }
 
 document.addEventListener("click", (e) => {
-  e.preventDefault();
+  if (
+    e.target.classList.contains("concealed") ||
+    e.target.classList.contains("unconcealed")
+  ) {
+    e.preventDefault();
+  } else return;
 
   if (e.target.classList.contains("concealed")) {
     const elm = e.target.previousSibling.previousSibling;
@@ -42,7 +47,7 @@ document.addEventListener("click", (e) => {
     e.target.classList.remove("unconcealed");
     e.target.classList.add("concealed");
     concealment(elm);
-  } else return;
+  } else return "Error";
 });
 
 function completeness() {
@@ -66,14 +71,11 @@ function userInputEvent() {
   if (userInput.value.length >= 3 && userTally === false) {
     userTally = true;
     checkTally++;
-
-    checkCount.innerText = checkTally;
   } else if (userTally === true && userInput.value.length < 3) {
     userTally = false;
     checkTally--;
-
-    checkCount.innerText = checkTally;
   }
+  checkCount.innerText = checkTally;
   concurrentName.innerText = userInput.value;
 
   completeness();
@@ -88,15 +90,12 @@ function emailInputEvent() {
   if (emailValidation(emailInput.value) && emailTally === false) {
     emailTally = true;
     checkTally++;
-
-    checkCount.innerText = checkTally;
   } else if (emailTally === true && !emailValidation(emailInput.value)) {
     emailTally = false;
     checkTally--;
-
-    checkCount.innerText = checkTally;
   }
-  emailValidation(emailInput.value);
+
+  checkCount.innerText = checkTally;
   completeness();
 }
 
@@ -104,17 +103,49 @@ function passwordInputEvent() {
   if (passInput.value.length >= 8 && passwordTally === false) {
     passwordTally = true;
     checkTally++;
-
-    checkCount.innerText = checkTally;
   } else if (passwordTally === true && passInput.value.length < 8) {
     passwordTally = false;
     checkTally--;
-
-    checkCount.innerText = checkTally;
   }
+  checkCount.innerText = checkTally;
+  completeness();
+}
+
+function retypeInputEvent() {
+  if (
+    passInput.value.length >= 8 &&
+    passInput.value === retypeInput.value &&
+    retypeTally === false
+  ) {
+    retypeTally = true;
+    checkTally++;
+  } else if (
+    (passInput.value.length < 8 && retypeTally === true) ||
+    (passInput.value != retypeInput.value && retypeTally === true)
+  ) {
+    retypeTally = false;
+    checkTally--;
+  }
+  checkCount.innerText = checkTally;
+  completeness();
+}
+
+function checkboxEvent() {
+  if (checkbox.checked && checkboxTally === false) {
+    checkboxTally = true;
+    checkTally++;
+  } else {
+    checkboxTally = false;
+    checkTally--;
+  }
+  checkCount.innerText = checkTally;
 
   completeness();
 }
+
+checkbox.addEventListener("click", checkboxEvent);
+
+retypeInput.addEventListener("input", retypeInputEvent);
 
 passInput.addEventListener("input", passwordInputEvent);
 
