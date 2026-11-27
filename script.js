@@ -20,6 +20,9 @@ const emailInput = document.getElementById("emailInput");
 const passInput = document.getElementById("passInput");
 const retypeInput = document.getElementById("retypeInput");
 const checkbox = document.getElementById("termsCheck");
+const strength = document.getElementById("strength");
+const strengthBar = strength.querySelectorAll("span");
+let bars = 0;
 
 function concealment(x) {
   if (x.type === "password") {
@@ -27,6 +30,20 @@ function concealment(x) {
   } else {
     x.type = "password";
   }
+}
+
+function strengthAssess() {
+  let barProgression = 0;
+  strengthBar.forEach((bar) => {
+    if (bars <= barProgression) {
+      bar.style.background = "rgb(48, 61, 75)";
+      return;
+    } else if (bars === 1) bar.style.background = "rgb(255, 131, 122)";
+    else if (bars === 2) bar.style.background = "rgb(255, 195, 77)";
+    else if (bars === 3) bar.style.background = "rgb(128, 166, 33)";
+    else if (bars === 4) bar.style.background = "rgb(191, 245, 56)";
+    barProgression++;
+  });
 }
 
 document.addEventListener("click", (e) => {
@@ -100,6 +117,10 @@ function emailInputEvent() {
 }
 
 function passwordInputEvent() {
+  if (passInput.value.length <= 8) {
+    bars = Math.floor(passInput.value.length / 2);
+  }
+
   if (passInput.value.length >= 8 && passwordTally === false) {
     passwordTally = true;
     checkTally++;
@@ -108,6 +129,7 @@ function passwordInputEvent() {
     checkTally--;
   }
   checkCount.innerText = checkTally;
+  strengthAssess();
   completeness();
 }
 
