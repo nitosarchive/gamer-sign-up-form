@@ -23,7 +23,8 @@ const checkbox = document.getElementById("termsCheck");
 const strength = document.getElementById("strength");
 const strengthBar = strength.querySelectorAll("span");
 let bars = 0;
-
+const passStrength = document.getElementById("passStrength");
+passStrength.style.textTransform = "uppercase";
 function concealment(x) {
   if (x.type === "password") {
     x.type = "text";
@@ -38,10 +39,23 @@ function strengthAssess() {
     if (bars <= barProgression) {
       bar.style.background = "rgb(48, 61, 75)";
       return;
-    } else if (bars === 1) bar.style.background = "rgb(255, 131, 122)";
-    else if (bars === 2) bar.style.background = "rgb(255, 195, 77)";
-    else if (bars === 3) bar.style.background = "rgb(128, 166, 33)";
-    else if (bars === 4) bar.style.background = "rgb(191, 245, 56)";
+    } else if (bars === 1) {
+      passStrength.innerText = "weak";
+      bar.style.background = "rgb(255, 131, 122)";
+      passStrength.style.color = "rgb(255, 131, 122)";
+    } else if (bars === 2) {
+      bar.style.background = "rgb(255, 195, 77)";
+      passStrength.innerText = "Mild";
+      passStrength.style.color = "rgb(255, 195, 77)";
+    } else if (bars === 3) {
+      bar.style.background = "rgb(128, 166, 33)";
+      passStrength.innerText = "Fair";
+      passStrength.style.color = "rgb(128, 166, 33)";
+    } else if (bars === 4) {
+      bar.style.background = "rgb(191, 245, 56)";
+      passStrength.innerText = "Strong";
+      passStrength.style.color = "rgb(191, 245, 56)";
+    }
     barProgression++;
   });
 }

@@ -233,7 +233,7 @@ form .divider {
 .form-container > div:not(:last-of-type) {
   margin-block-end: var(--default-spacing);
 }
-.form-container span:not(.invalid) {
+.form-container span:not(.invalid, .pass-directions) {
   text-transform: uppercase;
 }
 
@@ -243,12 +243,21 @@ form .divider {
   font-size: 0.69em;
 }
 
-.form-container span::first-letter {
-  text-transform: uppercase;
-}
-
 .arrow {
   color: var(--Lime-500);
+}
+
+.pass-directions-container::first-letter {
+  text-transform: uppercase;
+}
+.pass-directions-container {
+  font-size: 0.69em;
+  display: flex;
+  justify-content: space-between;
+}
+.pass-directions {
+  color: var(--Neutral-500);
+  text-transform: lowercase;
 }
 
 input:not([type="checkbox"]) {
