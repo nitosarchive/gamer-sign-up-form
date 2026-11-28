@@ -33,6 +33,16 @@ function concealment(x) {
   }
 }
 
+function tickMark(elm, elmTally) {
+  const tick = elm.closest("div").querySelector(".tick");
+
+  if (elmTally === true) {
+    tick.classList.remove("hidden");
+  } else {
+    tick.classList.add("hidden");
+  }
+}
+
 function strengthAssess() {
   let barProgression = 0;
   strengthBar.forEach((bar) => {
@@ -110,6 +120,7 @@ function userInputEvent() {
   concurrentName.innerText = userInput.value;
 
   completeness();
+  tickMark(userInput, userTally);
 }
 
 function emailValidation(email) {
@@ -127,6 +138,7 @@ function emailInputEvent() {
   }
 
   checkCount.innerText = checkTally;
+  tickMark(emailInput, emailTally);
   completeness();
 }
 
@@ -145,6 +157,7 @@ function passwordInputEvent() {
   checkCount.innerText = checkTally;
   strengthAssess();
   completeness();
+  tickMark(passInput, passwordTally);
 }
 
 function retypeInputEvent() {
@@ -164,6 +177,7 @@ function retypeInputEvent() {
   }
   checkCount.innerText = checkTally;
   completeness();
+  tickMark(retypeInput, retypeTally);
 }
 
 function checkboxEvent() {
