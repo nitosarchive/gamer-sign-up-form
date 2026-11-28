@@ -247,13 +247,13 @@ form .divider {
   color: var(--Lime-500);
 }
 
-.pass-directions-container::first-letter {
-  text-transform: uppercase;
-}
 .pass-directions-container {
   font-size: 0.69em;
   display: flex;
   justify-content: space-between;
+  ::first-letter {
+    text-transform: uppercase;
+  }
 }
 .pass-directions {
   color: var(--Neutral-500);
@@ -331,7 +331,8 @@ input[type="checkbox"] {
   appearance: none;
   cursor: pointer;
   position: relative;
-  padding: 1em;
+  width: 30px;
+  height: 30px;
 }
 
 input[type="checkbox"]:checked {
